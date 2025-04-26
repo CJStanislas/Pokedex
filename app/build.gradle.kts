@@ -68,11 +68,8 @@ dependencies {
     //Retrofit
     implementation(libs.retrofit)
 
-
-    //ViewModel
-
     //Navigation
-
+    implementation(libs.androidx.navigation.compose)
 
 
 }
