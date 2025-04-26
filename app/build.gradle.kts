@@ -65,7 +65,8 @@ dependencies {
     //Timber
     implementation(libs.timber)
 
-    //Retrofit + OkHttp
+    //Retrofit
+    implementation(libs.retrofit)
 
 
     //ViewModel
