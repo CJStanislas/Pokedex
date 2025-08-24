@@ -1,7 +1,6 @@
 package com.example.pokedex.domain.repository
 
 import com.example.pokedex.data.repository.PokeAPIRepository
+import javax.inject.Inject
 
-class PokeAPIRepositoryImpl(val toto: Int, val titi: String): PokeAPIRepository {
-
-}
+class PokeAPIRepositoryImpl @Inject constructor(): PokeAPIRepository {}
