@@ -24,8 +24,8 @@ fun PokedexScreen(viewModel: PokedexViewModel = hiltViewModel()) {
     Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
 
         Column {
-            Greeting(
-                name = uiState.text,
+            Text(
+                text = uiState.text,
                 modifier = Modifier.padding(innerPadding)
             )
 
@@ -33,19 +33,10 @@ fun PokedexScreen(viewModel: PokedexViewModel = hiltViewModel()) {
         }
     }
 }
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = name,
-        modifier = modifier
-    )
-}
-
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     PokedexTheme {
-        Greeting("Android")
+        PokedexScreen()
     }
 }
