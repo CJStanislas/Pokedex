@@ -13,7 +13,7 @@ import kotlin.random.Random
 
 
 @Composable
-fun PokedexScreenUI(uiState: PokedexState, onPokemonClicked: (Int) -> Unit,) {
+fun PokedexScreenUI(uiState: PokedexState, onPokemonClicked: (Int) -> Unit) {
 
     Column(modifier = Modifier.fillMaxSize()) {
         Text(
