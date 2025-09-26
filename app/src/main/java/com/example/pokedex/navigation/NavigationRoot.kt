@@ -17,7 +17,7 @@ import com.example.pokedex.presentation.pokedex.viewmodel.PokedexViewModel
 import com.example.pokedex.presentation.pokemonDetail.ui.PokemonDetailScreenUI
 import com.example.pokedex.presentation.pokemonDetail.viewmodel.PokemonDetailViewModel
 
-
+//TODO : Try TwoPaneSceneStrategy later
 @Composable
 fun NavigationRoot(
     modifier: Modifier = Modifier,
@@ -32,6 +32,7 @@ fun NavigationRoot(
             rememberViewModelStoreNavEntryDecorator(),
             rememberSceneSetupNavEntryDecorator()
         ),
+        //sceneStrategy = DialogSceneStrategy(),
         entryProvider = entryProvider {
             entry<AppDestination.PokedexScreen> {
                 val viewModel: PokedexViewModel = hiltViewModel()
@@ -44,7 +45,7 @@ fun NavigationRoot(
                     }
                 )
             }
-            entry<AppDestination.PokemonDetailScreen> { key ->
+            entry<AppDestination.PokemonDetailScreen>(/*metadata = DialogSceneStrategy.dialog()*/) { key ->
                 val viewModel = hiltViewModel<PokemonDetailViewModel, PokemonDetailViewModel.Factory>(
                     creationCallback = { factory -> factory.create(key.id)}
                 )
