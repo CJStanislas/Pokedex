@@ -4,7 +4,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.example.pokedex.presentation.pokedex.ui.PokedexScreen
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
+import androidx.compose.ui.Modifier
+import com.example.pokedex.navigation.NavigationRoot
 import com.example.pokedex.presentation.theme.PokedexTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -16,7 +20,13 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             PokedexTheme {
-                PokedexScreen()
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    NavigationRoot(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(innerPadding)
+                    )
+                }
             }
         }
     }
